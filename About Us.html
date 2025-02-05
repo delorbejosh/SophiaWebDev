@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us/Contact</title>
+    <link rel="stylesheet" href="About Us.css">
+</head>
+<body>
+    
+    <header>
+        <!-- Logo and Title -->
+        <div class="logo-title-container">
+            <img src="D:\School\Logo.png" alt="Book Haven Logo">
+            <h1>Book Haven Bookstore</h1>
+        </div>
+    
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button>Search</button>
+        </div>
+    
+        <!-- Navigation Buttons -->
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="About_Us.html">About Us</a></li>
+                <li><a href="Custom.html">Custom</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+
+
+
+    <section>
+        <h2>About Us</h2>
+        <p>
+            Book Haven Bookstore is a local treasure 
+            for book enthusiasts, offering a diverse selection of books, magazines, journals, and office supplies. With a deep-rooted commitment to 
+            fostering literary exploration and a love for reading, we are embarking on the creation of an online presence that mirrors our dedication to the 
+            world of words. Serving a broad audience of book lovers and knowledge seekers, our central goal is to amplify visibility, cultivate a vibrant 
+            literary community, and simplify the process of book inquiries and purchases. Our target audience comprises avid readers, students, and 
+            individuals in search of high-quality reading materials and office essentials. Our website theme celebrates the written word, creating an 
+            inviting digital space that encourages literary discovery and supports intellectual growth.
+        </p>
+    
+        <h3>Hours of Operation</h3>
+        <p>
+            <strong>Monday–Friday:</strong> 9 a.m. to 8 p.m.<br>
+            <strong>Saturday:</strong> 10 a.m. to 6 p.m.<br>
+            <strong>Sunday:</strong> 11 a.m. to 5 p.m.
+        </p>
+    </section>
+    
+    
+
+
+
+
+
+
+
+<section>
+    <h2>Contact Us</h2>
+    <form action="/submit-feedback" method="post">
+        <fieldset>
+            <legend>Client Feedback</legend>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" placeholder="Your Feedback"></textarea><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Custom Order</legend>
+            <label for="order-details">Order Details:</label><br>
+            <textarea id="order-details" name="order-details" rows="4" placeholder="Describe your custom order"></textarea><br><br>
+
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" required><br><br>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <nav class="nav-buttons-footer">
+        <button onclick="location.href='Homepage.html'">Home</button>
+        <button onclick="location.href='Gallery.html'">Gallery</button>
+        <button onclick="location.href='About Us.html'">About Us</button>
+        <button onclick="location.href='Custom.html'">Custom</button>
+    </nav>
+
+    <div class="newsletter">
+        <form action="#" method="post" onsubmit="handleSubscription(event)">
+            <input type="email" id="emailInput" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <p>&copy; 2025 Book Haven Bookstore</p>
+
+
+    
+</footer>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents actual form submission
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const orderDetails = document.getElementById('order-details').value;
+        const quantity = document.getElementById('quantity').value;
+
+        // Create an object to store in localStorage
+        const customerData = {
+            name: name,
+            email: email,
+            message: message,
+            orderDetails: orderDetails,
+            quantity: quantity
+        };
+
+        // Save to localStorage
+        localStorage.setItem("customerOrder", JSON.stringify(customerData));
+
+        // Confirmation alert
+        alert("Thank you for your message! Your details have been saved.");
+
+        // Clear the form fields after submission
+        event.target.reset();
+    });
+
+    // Function to pre-fill the form with saved data (optional)
+    document.addEventListener("DOMContentLoaded", function() {
+        const savedData = JSON.parse(localStorage.getItem("customerOrder"));
+
+        if (savedData) {
+            document.getElementById('name').value = savedData.name || "";
+            document.getElementById('email').value = savedData.email || "";
+            document.getElementById('message').value = savedData.message || "";
+            document.getElementById('order-details').value = savedData.orderDetails || "";
+            document.getElementById('quantity').value = savedData.quantity || "";
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

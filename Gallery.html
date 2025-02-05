@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="Gallery.css">
+</head>
+<body>
+
+
+
+    <header>
+       
+        <div class="logo-title-container">
+            <img src="D:\School\Logo.png" alt="Book Haven Logo">
+            <h1>Book Haven Bookstore</h1>
+        </div>
+    
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button>Search</button>
+        </div>
+    
+       
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Custom.html">Custom</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+<section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <div class="image-slot">
+            <img src="D:\School\Client3_Book1.png" alt="Image 1">
+            <p>A thrilling mystery novel that will keep you turning pages late into the night.</p>
+            <button class="add-to-cart" data-item="Mystery Novel">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_Book2.png" alt="Image 2">
+            <p>An uplifting tale of hope and determination that will leave you inspired.</p>
+            <button class="add-to-cart" data-item="Inspiring Tale">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_Book3.png" alt="Image 3">
+            <p>Unravel the secrets of the universe with this fascinating guide to space exploration.</p>
+            <button class="add-to-cart" data-item="Space Exploration Book">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_Magazine1.png" alt="Image 4">
+            <p>Stay ahead of fashion trends with this exclusive issue packed with style tips.</p>
+            <button class="add-to-cart" data-item="Fashion Magazine">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_Magazine2.png" alt="Image 5">
+            <p>Engage with groundbreaking journalism and thought-provoking articles.</p>
+            <button class="add-to-cart" data-item="News Magazine">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_Magazine3.png" alt="Image 6">
+            <p>Discover the latest advancements in technology, science, and innovation.</p>
+            <button class="add-to-cart" data-item="Science Magazine">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_Notebook.png" alt="Image 7">
+            <p>A premium-quality notebook for capturing your best ideas and creative sketches.</p>
+            <button class="add-to-cart" data-item="Notebook">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_Stickers.png" alt="Image 8">
+            <p>Add a splash of personality to your belongings with these vibrant stickers.</p>
+            <button class="add-to-cart" data-item="Custom Stickers">Add to Cart</button>
+        </div>
+    
+        <div class="image-slot">
+            <img src="D:\School\Client3_ToteBag.png" alt="Image 9">
+            <p>A stylish and reusable tote bag, perfect for everyday use and book lovers.</p>
+            <button class="add-to-cart" data-item="Tote Bag">Add to Cart</button>
+        </div>
+    </div>
+    
+        
+
+
+    </div>
+
+
+    <div class="cart-controls">
+    <button id="view-cart">View Cart</button>
+    <button id="clear-cart">Clear Cart</button>
+    <button id="process-order">Process Order</button>
+</div>
+
+    
+</section>
+
+<!-- Modal Structure -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+    </div>
+</div>
+
+
+<footer>
+    <nav class="nav-buttons-footer">
+        <button onclick="location.href='Homepage.html'">Home</button>
+        <button onclick="location.href='Gallery.html'">Gallery</button>
+        <button onclick="location.href='About Us.html'">About Us</button>
+        <button onclick="location.href='Custom.html'">Custom</button>
+    </nav>
+
+    <div class="newsletter">
+        <form action="#" method="post" onsubmit="handleSubscription(event)">
+            <input type="email" id="emailInput" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <p>&copy; 2025 Book Haven Bookstore</p>
+</footer>
+
+<script>
+    // Load cart from sessionStorage (or initialize if empty)
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    
+    // Function to save cart to sessionStorage
+    function saveCartToSession() {
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+    }
+    
+    // Add event listeners for "Add to Cart" buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const item = this.dataset.item;
+            cart.push(item);
+            saveCartToSession();
+            alert(`"${item}" has been added to your cart.`);
+        });
+    });
+    
+    // View Cart Modal functionality
+    const modal = document.getElementById("cart-modal");
+    const closeModalButton = document.querySelector(".close");
+    const viewCartButton = document.getElementById("view-cart");
+    const cartItemsList = document.getElementById("cart-items");
+    
+    // Display cart items in the modal
+    viewCartButton.addEventListener('click', function() {
+        cartItemsList.innerHTML = ""; // Clear previous cart items
+        if (cart.length > 0) {
+            cart.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                cartItemsList.appendChild(li);
+            });
+            modal.style.display = "block"; // Show the modal
+        } else {
+            alert("Your cart is empty.");
+        }
+    });
+    
+    // Close modal functionality
+    closeModalButton.addEventListener('click', function() {
+        modal.style.display = "none"; // Hide the modal
+    });
+    
+    // Close the modal if the user clicks outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+    
+    // Clear Cart button functionality
+    document.getElementById('clear-cart').addEventListener('click', function() {
+        if (cart.length > 0) {
+            cart = [];
+            saveCartToSession();
+            cartItemsList.innerHTML = ""; // Clear modal content
+            alert('Your cart has been cleared.');
+        } else {
+            alert('Your cart is already empty.');
+        }
+    });
+    
+    // Process Order button functionality
+    document.getElementById('process-order').addEventListener('click', function() {
+        if (cart.length > 0) {
+            alert(`Your order has been processed! You purchased: ${cart.join(', ')}.`);
+            cart = [];
+            saveCartToSession();
+            cartItemsList.innerHTML = ""; // Clear modal content
+        } else {
+            alert('Your cart is empty. Add some items before processing your order.');
+        }
+    });
+    
+    // Initialize cart from sessionStorage on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    });
+    
+    </script>
+    
+ 
+
+
+
+
+
+
+</body>
+</html>

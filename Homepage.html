@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven Bookstore</title>
+    <link rel="stylesheet" href="Homepage.css">
+    
+</head>
+<body>
+
+
+    
+    <header>
+        <!-- Logo and Title -->
+        <div class="logo-title-container">
+            <img src="D:\School\Logo.png" alt="Book Haven Logo">
+            <h1>Book Haven Bookstore</h1>
+        </div>
+    
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button>Search</button>
+        </div>
+    
+        <!-- Navigation Buttons -->
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Custom.html">Custom</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+
+
+    <section>
+        <h2>Bestsellers</h2>
+        <div class="bestsellers">
+            <div class="image-slot">
+                <img src="D:\School\Client3_Book1.png" alt="Bestseller 1">
+            </div>
+            <div class="image-slot">
+                <img src="D:\School\Client3_Stickers.png" alt="Bestseller 2">
+            </div>
+        </div>
+        <button class="promotions-button">View Promotions</button>
+    </section>
+
+    <section>
+        <h2>Nonfiction</h2>
+        <div class="nonfiction">
+            <div class="image-slot">
+                <img src="D:\School\Client3_Book3.png" alt="Nonfiction 1">
+            </div>
+            <div class="image-slot">
+                <img src="D:\School\Client3_Magazine3.png" alt="Nonfiction 2">
+            </div>
+        </div>
+        <button class="promotions-button">View Promotions</button>
+    </section>
+
+    <section>
+        <h2>Categories</h2>
+        <div class="categories">
+            <div class="image-slot">
+                <img src="D:\School\Client3_Book3.png" alt="Category 1">
+            </div>
+            <div class="image-slot">
+                <img src="D:\School\Client3_Magazine3.png" alt="Category 2">
+            </div>
+        </div>
+        <button class="promotions-button">View Promotions</button>
+    </section>
+
+    <footer>
+        <nav class="nav-buttons-footer">
+            <button onclick="location.href='Homepage.html'">Home</button>
+            <button onclick="location.href='Gallery.html'">Gallery</button>
+            <button onclick="location.href='About Us.html'">About Us</button>
+            <button onclick="location.href='Custom.html'">Custom</button>
+        </nav>
+    
+        <div class="newsletter">
+            <form action="#" method="post" onsubmit="handleSubscription(event)">
+                <input type="email" id="emailInput" placeholder="Your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    
+        <p>&copy; 2025 Book Haven Bookstore</p>
+    
+
+        <script>
+            function handleSubscription(event) {
+                event.preventDefault(); 
+                const email = document.getElementById('emailInput').value;
+                alert(`Thank you for subscribing, ${email}!`);
+                event.target.reset(); 
+            }
+        </script>
+    </footer>
+
+
+
+</body>
+</html>

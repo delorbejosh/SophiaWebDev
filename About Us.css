@@ -1,0 +1,213 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3F5461; /* Literature Blue */
+    background-color: #F9F9F9; /* Light background for contrast */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5C2E5C; /* Regal Quill */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #742C36; /* Romantic Red */
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2E2E4E; /* Midnight Manuscript */
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-title-container img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.logo-title-container h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 300px;
+}
+
+.search-bar button {
+    border-radius: 0 5px 5px 0;
+    background-color: #5C2E5C; /* Regal Quill */
+    color: white;
+    border: 1px solid #5C2E5C;
+}
+
+.search-bar button:hover {
+    background-color: #742C36; /* Romantic Red */
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 16px;
+}
+
+/* Section */
+section {
+    margin: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #2E2E4E; /* Midnight Manuscript */
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    color: #3F5461; /* Literature Blue */
+    line-height: 1.5;
+}
+
+strong {
+    color: #5C2E5C; /* Regal Quill */
+}
+
+/* Form */
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form fieldset {
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+form legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2E2E4E; /* Midnight Manuscript */
+}
+
+form label {
+    font-size: 14px;
+    color: #3F5461; /* Literature Blue */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #5C2E5C; /* Regal Quill */
+}
+
+form button {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #5C2E5C; /* Regal Quill */
+    color: white;
+}
+
+
+/* Footer */
+footer {
+    background-color: #3F5461; /* Literature Blue */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.nav-buttons-footer button {
+    margin: 5px;
+    background-color: white;
+    color: #5C2E5C; /* Regal Quill */
+    border: 1px solid #5C2E5C;
+}
+
+.nav-buttons-footer button:hover {
+    background-color: #5C2E5C; /* Regal Quill */
+    color: white;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 250px;
+}
+
+.newsletter button {
+    border-radius: 0 5px 5px 0;
+    background-color: #5C2E5C; /* Regal Quill */
+}
+
+.newsletter button:hover {
+    background-color: #742C36; /* Romantic Red */
+}
+

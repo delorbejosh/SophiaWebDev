@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven Bookstore</title>
+    <link rel="stylesheet" href="Custom.css">
+</head>
+<body>
+
+
+    
+    <header>
+        <!-- Logo and Title -->
+        <div class="logo-title-container">
+            <img src="D:\School\Logo.png" alt="Book Haven Logo">
+            <h1>Book Haven Bookstore</h1>
+        </div>
+    
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button>Search</button>
+        </div>
+    
+        <!-- Navigation Buttons -->
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Custom.html">Custom</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+
+
+    <section>
+        <h2>Customer Highlights</h2>
+        <div class="customer-highlights">
+            <div class="highlight">
+                <img src="D:\School\person 1.jpg" alt="Customer 1">
+                <p>"Book Haven has been my go-to place for rare finds! I discovered a collection of vintage books that I couldn't find anywhere else. It’s not just a bookstore; it’s a treasure trove!" - Mark M.</p>
+            </div>
+            <div class="highlight">
+                <img src="D:\School\person2.jpg" alt="Customer 2">
+                <p>"I came across Book Haven when looking for textbooks for my studies. Their selection of academic books is fantastic, and the staff always helps me find what I need." - James L.</p>
+            </div>
+            <div class="highlight">
+                <img src="D:\School\person3.jpg" alt="Customer 3">
+                <p>"What I love most about Book Haven is how it brings together different kinds of readers. The events, the community—it's a place where books come to life!" - Jacob K.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section>
+        <h2>Community Involvement</h2>
+        <div class="community-involvement">
+            <div class="story">
+                <p>"At Book Haven, we believe in giving back to the community. Last year, we hosted a free book giveaway for underprivileged children, ensuring they had access to enriching stories and learning materials. Seeing their faces light up was truly unforgettable!"</p>
+            </div>
+            <div class="story">
+                <p>"We’re proud to partner with local schools to organize annual reading competitions and book fairs. These events not only promote literacy but also bring families together to celebrate the joy of reading. Our goal is to inspire the next generation of book lovers!"</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer>
+        <nav class="nav-buttons-footer">
+            <button onclick="location.href='Homepage.html'">Home</button>
+            <button onclick="location.href='Gallery.html'">Gallery</button>
+            <button onclick="location.href='About Us.html'">About Us</button>
+            <button onclick="location.href='Custom.html'">Custom</button>
+        </nav>
+    
+        <div class="newsletter">
+            <form action="#" method="post" onsubmit="handleSubscription(event)">
+                <input type="email" id="emailInput" placeholder="Your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    
+        <p>&copy; 2025 Book Haven Bookstore</p>
+    
+
+        <script>
+            function handleSubscription(event) {
+                event.preventDefault(); 
+                const email = document.getElementById('emailInput').value;
+                alert(`Thank you for subscribing, ${email}!`);
+                event.target.reset(); 
+            }
+        </script>
+    </footer>
+
+</body>
+</html>
